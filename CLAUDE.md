@@ -1,5 +1,7 @@
 # claude-obsidian — Claude + Obsidian Wiki Vault
 
+> Part of **antigravity-obsidian**, a fork of [claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian) (AgriciDaniel, MIT) that adds Antigravity CLI support. This file is the **Claude Code** entry point; for Antigravity CLI (`agy`) see [`ANTIGRAVITY.md`](ANTIGRAVITY.md), and the shared cross-agent context lives in [`AGENTS.md`](AGENTS.md).
+
 This folder is both a Claude Code plugin and an Obsidian vault.
 
 **Plugin name:** `claude-obsidian` (v1.7+ "Compound Vault" — see [docs/compound-vault-guide.md](docs/compound-vault-guide.md); v1.8+ adds methodology modes — see [docs/methodology-modes-guide.md](docs/methodology-modes-guide.md))
