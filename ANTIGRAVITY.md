@@ -92,10 +92,35 @@ adapt the config shape for `agy`. Server details: `skills/wiki/references/mcp-se
 ## Differences vs Claude Code
 
 - `hooks/hooks.json` and `.claude-plugin/` are Claude-Code-specific and are ignored
-  by Antigravity. The PostToolUse auto-commit hook does **not** run under `agy`; use
-  the Obsidian Git plugin (15-min auto-commit) or an Antigravity hook instead.
+  by Antigravity. The PostToolUse auto-commit hook does **not** run under `agy` —
+  see **Auto-commit (Obsidian Git)** below to restore that behaviour.
 - `allowed-tools` in SKILL.md frontmatter is ignored by Antigravity (harmless).
 - This fork keeps full Claude Code compatibility — nothing Claude-specific was removed.
+
+## Auto-commit (Obsidian Git)
+
+Claude Code auto-commits vault writes through `hooks/hooks.json`
+(PostToolUse → `git add wiki/ .raw/`). That hook does **not** run under `agy`, so
+use the [Obsidian Git](https://github.com/Vinzent03/obsidian-git) plugin to keep the
+same "every change gets committed" behaviour:
+
+1. In Obsidian: **Settings → Community plugins → Browse →** search **"Obsidian Git"**
+   (by Vinzent03) → **Install → Enable**. (It is *not* bundled with this vault.)
+2. **Settings → Obsidian Git** → set **"Vault backup interval (minutes)"** to `15`
+   (or your preference). Optionally enable **"Pull updates on startup"** and
+   **"Push on backup"** to stay in sync with `origin`.
+3. This folder is already a git repo, so commits start on the next interval. Make
+   sure `git status` is clean before the first run.
+
+Notes:
+
+- Obsidian Git commits the **whole vault** on a timer, vs. the Claude hook's
+  per-write `wiki/ .raw/` staging — coarser but simpler, and fine for single-writer
+  `agy` sessions.
+- It does **not** consult `scripts/wiki-lock.sh` advisory locks; those only matter
+  for parallel multi-writer ingest, which is uncommon in interactive `agy` use.
+- Prefer manual control? Skip the plugin and run `git commit` yourself between
+  `agy` tasks — nothing in the skills depends on auto-commit.
 
 ## Upstream
 
