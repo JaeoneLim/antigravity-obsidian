@@ -8,6 +8,7 @@
 #   - Codex CLI      : symlink to ~/.codex/skills/claude-obsidian
 #   - OpenCode       : symlink to ~/.opencode/skills/claude-obsidian
 #   - Gemini CLI     : symlink to ~/.gemini/skills/claude-obsidian
+#   - Antigravity CLI: symlink to .agents/skills (in repo) + ~/.gemini/skills/antigravity-obsidian
 #   - Cursor         : symlink to .cursor/skills (in repo)
 #   - Windsurf       : symlink to .windsurf/skills (in repo)
 #
@@ -70,6 +71,10 @@ link_if_missing "$SKILLS_DIR" "$HOME/.opencode/skills/claude-obsidian" "OpenCode
 # Gemini CLI
 link_if_missing "$SKILLS_DIR" "$HOME/.gemini/skills/claude-obsidian" "Gemini CLI"
 
+# Antigravity CLI (Gemini-family; replaced Gemini CLI). Project-level + global.
+link_if_missing "$SKILLS_DIR" "$REPO_ROOT/.agents/skills" "Antigravity CLI (project)"
+link_if_missing "$SKILLS_DIR" "$HOME/.gemini/skills/antigravity-obsidian" "Antigravity CLI (global)"
+
 # Cursor (workspace-local)
 link_if_missing "$SKILLS_DIR" "$REPO_ROOT/.cursor/skills" "Cursor"
 
@@ -77,7 +82,7 @@ link_if_missing "$SKILLS_DIR" "$REPO_ROOT/.cursor/skills" "Cursor"
 link_if_missing "$SKILLS_DIR" "$REPO_ROOT/.windsurf/skills" "Windsurf"
 
 echo
-echo -e "${GREEN}Done.${NC} Bootstrap files (AGENTS.md, GEMINI.md, .cursor/rules/, .windsurf/rules/, .github/copilot-instructions.md) are already in this repo."
+echo -e "${GREEN}Done.${NC} Bootstrap files (AGENTS.md, ANTIGRAVITY.md, GEMINI.md, .cursor/rules/, .windsurf/rules/, .github/copilot-instructions.md) are already in this repo."
 echo
 echo "To verify each agent picks up the skills:"
 echo "  - Claude Code: open the project, type /wiki"
@@ -85,3 +90,4 @@ echo "  - Codex CLI:   codex --list-skills | grep claude-obsidian"
 echo "  - Cursor:      open the project, ask 'what skills do you have?'"
 echo "  - Windsurf:    open in Cascade, ask the same"
 echo "  - Gemini CLI:  gemini --list-skills (if supported)"
+echo "  - Antigravity: agy inspect   (confirms AGENTS.md + Agent Skills + MCP)"
