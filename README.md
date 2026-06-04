@@ -1,8 +1,12 @@
 
-# claude-obsidian: Self-Organizing AI Second Brain for Obsidian + Claude Code
+# antigravity-obsidian: Self-Organizing AI Second Brain for Obsidian + Antigravity CLI
+
+> **Independent fork of [claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian) by AgriciDaniel (MIT)**, adapted to run under **Antigravity CLI (`agy`)** alongside Claude Code. The underlying LLM-Wiki system, skills, and docs are AgriciDaniel's work; all upstream attribution is preserved (see [`LICENSE`](LICENSE) and [`ATTRIBUTION.md`](ATTRIBUTION.md)). Not affiliated with or endorsed by Google, Anthropic, or Obsidian.
+>
+> **▶ Antigravity CLI users start here:** [`ANTIGRAVITY.md`](ANTIGRAVITY.md). Wire skills with `bash bin/setup-multi-agent.sh`, then run `agy inspect`.
 
 <p align="center">
-  <img src="wiki/meta/claude-obsidian-gif-cover-16x9.gif" alt="claude-obsidian: persistent compounding wiki vault for Claude Code and Obsidian" width="100%" />
+  <img src="wiki/meta/claude-obsidian-gif-cover-16x9.gif" alt="antigravity-obsidian: persistent compounding wiki vault for Antigravity CLI and Obsidian (a fork of claude-obsidian)" width="100%" />
 </p>
 
 [![GitHub stars](https://img.shields.io/github/stars/AgriciDaniel/claude-obsidian?style=flat&color=e8734a)](https://github.com/AgriciDaniel/claude-obsidian/stargazers)
@@ -661,7 +665,9 @@ Issue + PR templates available under [`.github/`](.github/). CI runs `make test`
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for full text. Free for personal and commercial use. Attribution appreciated but not required.
+MIT License. See [LICENSE](LICENSE) for full text. Free for personal and commercial use.
+
+This repository is a fork of [claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian) © 2026 AgriciDaniel (AI Marketing Hub), used under MIT — the original copyright and [LICENSE](LICENSE) are retained. Third-party components keep their own licenses; see [ATTRIBUTION.md](ATTRIBUTION.md) (notably two GPL-2.0 CSS snippets, bundled unmodified, and several Obsidian plugins under their own terms). This fork adds Antigravity CLI support ([`ANTIGRAVITY.md`](ANTIGRAVITY.md)) and is an independent project, not affiliated with or endorsed by Google, Anthropic, or Obsidian.
 
 ---
 
